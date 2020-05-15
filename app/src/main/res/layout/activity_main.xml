@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/tb_camera"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/toolbar_color2">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/bt_close"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginLeft="@dimen/_4sdp"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            android:padding="@dimen/_8sdp"-->
+        <!--            android:src="@drawable/ic_close_camera" />-->
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginLeft="@dimen/_4sdp"-->
+        <!--            android:layout_marginRight="@dimen/_4sdp"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            android:padding="@dimen/_6sdp"-->
+        <!--            android:src="@drawable/ic_done_camera" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="CAMERA"
+            android:textColor="#3c3837"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_camera_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_camera">
+
+        <org.opencv.android.JavaCameraView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/CameraView"
+            />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal|top"
+            android:visibility="gone" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/bt_rotate_camera"-->
+        <!--            android:layout_width="@dimen/_40sdp"-->
+        <!--            android:layout_height="@dimen/_40sdp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:padding="@dimen/_10sdp"-->
+        <!--            android:src="@drawable/ic_rotate_camera" />-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/bt_flash_mode"-->
+        <!--            android:layout_width="@dimen/_40sdp"-->
+        <!--            android:layout_height="@dimen/_40sdp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:padding="@dimen/_10sdp"-->
+        <!--            android:src="@drawable/ic_turn_on_flash" />-->
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="@dimen/_55sdp"-->
+        <!--            android:layout_height="@dimen/_55sdp"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:src="@drawable/ic_focus_camera" />-->
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

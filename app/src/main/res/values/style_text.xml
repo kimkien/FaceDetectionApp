@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Roboto_Black">
+        <item name="android:text">fonts/Roboto-black.ttf</item>
+    </style>
+
+    <style name="Roboto_BlackItalic">
+        <item name="android:text">fonts/Roboto-BlackItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_Bold">
+        <item name="android:text">fonts/Roboto-Bold.ttf</item>
+    </style>
+
+    <style name="Roboto_BoldCondensed">
+        <item name="android:text">fonts/Roboto-BoldCondensed.ttf</item>
+    </style>
+
+    <style name="Roboto_BoldCondensedItalic">
+        <item name="android:text">fonts/Roboto-BoldCondensedItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_BoldItalic">
+        <item name="android:text">fonts/Roboto-BoldItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_Condensed">
+        <item name="android:text">fonts/Roboto-Condensed.ttf</item>
+    </style>
+
+    <style name="Roboto_CondensedItalic">
+        <item name="android:text">fonts/Roboto-CondensedItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_Italic">
+        <item name="android:text">fonts/Roboto-Italic.ttf</item>
+    </style>
+
+    <style name="Roboto_Light">
+        <item name="android:text">fonts/Roboto-Light.ttf</item>
+    </style>
+
+    <style name="Roboto_LightItalic">
+        <item name="android:text">fonts/Roboto-LightItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_Medium">
+        <item name="android:text">fonts/Roboto-Medium.ttf</item>
+    </style>
+
+    <style name="Roboto_MediumItalic">
+        <item name="android:text">fonts/Roboto-MediumItalic.ttf</item>
+    </style>
+
+    <style name="Roboto_Regular">
+        <item name="android:text">fonts/Roboto-Regular.ttf</item>
+    </style>
+
+    <style name="Roboto_Thin">
+        <item name="android:text">fonts/Roboto-Thin.ttf</item>
+    </style>
+
+    <style name="Roboto_ThinItalic">
+        <item name="android:text">fonts/Roboto-ThinItalic.ttf</item>
+    </style>
+
+    <style name="UTM_Avo">
+        <item name="android:text">fonts/UTM_Avo.ttf</item>
+    </style>
+
+    <style name="UTM_AvoBold_Italic">
+        <item name="android:text">fonts/UTM_AvoBold_Italic.ttf</item>
+    </style>
+
+    <style name="UTM_AvoBold">
+        <item name="android:text">fonts/UTM_AvoBold.ttf</item>
+    </style>
+
+    <style name="UTM_AvoItalic">
+        <item name="android:text">fonts/UTM_AvoItalic.ttf</item>
+    </style>
+</resources>
