@@ -119,25 +119,28 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         final int IN_WIDTH = 240;
         final int IN_HEIGHT = 320;
         final float WH_RATIO = (float)IN_WIDTH / IN_HEIGHT;
-        final double IN_SCALE_FACTOR = 0.003921568627451;
+        final double IN_SCALE_FACTOR = 0.0039215686;
         final double MEAN_VAL = 0;
-        final double THRESHOLD = 0.4;
+        final double THRESHOLD = 0.45;
 
         // Get a new frame
         Mat frame = inputFrame.rgba();
-        Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2RGB);
-//        Log.d(TAG, "inputFrame: "+ frame.size());
-//        Imgproc.resize(frame, frame, new Size(IN_WIDTH,IN_HEIGHT));
-        // Forward image through network.
-
-        Mat blob = Dnn.blobFromImage(frame, IN_SCALE_FACTOR,
-                new Size(IN_WIDTH, IN_HEIGHT),
-                new Scalar(MEAN_VAL, MEAN_VAL, MEAN_VAL), /*swapRB*/false, /*crop*/false);
-        net.setInput(blob);
-        Mat detections = net.forward();
         int cols = frame.cols();
         int rows = frame.rows();
+
+        Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2RGB);
+//        Log.d(TAG, "inputFrame: "+ frame.size());
+        // Forward image through network.
+        Mat blob = Dnn.blobFromImage(frame, IN_SCALE_FACTOR,
+                new Size(IN_WIDTH, IN_HEIGHT),
+                new Scalar(0, 0, 0), /*swapRB*/true, /*crop*/false);
+        net.setInput(blob);
+        Mat detections = net.forward();
+//        Log.d(TAG, detections.toString());
+
         detections = detections.reshape(1, (int)detections.total() / 7);
+//        Log.d(TAG, detections.toString());
+
         for (int i = 0; i < detections.rows(); ++i) {
             double confidence = detections.get(i, 2)[0];
             if (confidence > THRESHOLD) {
@@ -149,17 +152,17 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                 // Draw rectangle around detected object.
                 Imgproc.rectangle(frame, new Point(left, top), new Point(right, bottom),
                         new Scalar(0, 255, 0));
-//                String label = classNames[classId] + ": " + confidence;
-                String label = "Face";
+//                String label = classNames[classId] + ": " confidence;
+                String label = "Face: " + String.format("%.4f", confidence);
                 int[] baseLine = new int[1];
-                Size labelSize = Imgproc.getTextSize(label, Core.FONT_HERSHEY_SIMPLEX, 0.5, 1, baseLine);
+                Size labelSize = Imgproc.getTextSize(label, Core.FONT_HERSHEY_COMPLEX, 1.0, 1, baseLine);
                 // Draw background for label.
                 Imgproc.rectangle(frame, new Point(left, top - labelSize.height),
                         new Point(left + labelSize.width, top + baseLine[0]),
                         new Scalar(255, 255, 255), Imgproc.CV_WARP_FILL_OUTLIERS);
                 // Write class name and confidence.
                 Imgproc.putText(frame, label, new Point(left, top),
-                        Core.FONT_HERSHEY_SIMPLEX, 0.5, new Scalar(0, 0, 0));
+                        Core.FONT_HERSHEY_SIMPLEX, 1.0, new Scalar(255,0,0));
             }
         }
         return frame;
